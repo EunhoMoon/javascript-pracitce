@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D-Day</title>
+
+    <script>
+      const counterMaker = () => {
+        const nowDate = new Date();
+        const targetDate = new Date(dateFormMaker()).setHours(0, 0, 0, 0);
+        const remaining = (targetDate - nowDate) / 1000;
+
+        const remainingDate = Math.floor(remaining / 3600 / 24);
+        const remainingHours = Math.floor(remaining / 3600) % 24;
+        const remainingMin = Math.floor(remaining / 60) % 60;
+        const remainingSec = Math.floor(remaining) % 60;
+
+        console.log(`${remainingDate}일 ${remainingHours}시간 ${remainingMin}분 ${remainingSec}초`);
+      };
+
+      const dateFormMaker = () => {
+        const inputYear = document.querySelector('#target-year-input').value;
+        const inputMonth = document.querySelector('#target-month-input').value;
+        const inputDate = document.querySelector('#target-date-input').value;
+
+        return `${inputYear}-${inputMonth}-${inputDate}`;
+      };
+    </script>
+  </head>
+
+  <body>
+    <input id="target-year-input" class="target-input" /> - <input id="target-month-input" class="target-input" /> - <input id="target-date-input" class="target-input" /> -
+    <button onclick="counterMaker()">버튼</button>
+  </body>
+</html>
