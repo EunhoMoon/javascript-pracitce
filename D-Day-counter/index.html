@@ -6,31 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>D-Day</title>
     <link rel="stylesheet" href="./style.css" />
-    <script>
-      const counterMaker = () => {
-        const nowDate = new Date();
-        const targetDate = new Date(dateFormMaker()).setHours(0, 0, 0, 0);
-        const remaining = (targetDate - nowDate) / 1000;
-
-        const remainingDate = Math.floor(remaining / 3600 / 24);
-        const remainingHours = Math.floor(remaining / 3600) % 24;
-        const remainingMin = Math.floor(remaining / 60) % 60;
-        const remainingSec = Math.floor(remaining) % 60;
-
-        document.querySelector("#days").innerHTML = remainingDate;
-        document.querySelector("#hours").innerHTML = remainingHours;
-        document.querySelector("#min").innerHTML = remainingMin;
-        document.querySelector("#sec").innerHTML = remainingSec;
-      };
-
-      const dateFormMaker = () => {
-        const inputYear = document.querySelector("#target-year-input").value;
-        const inputMonth = document.querySelector("#target-month-input").value;
-        const inputDate = document.querySelector("#target-date-input").value;
-
-        return `${inputYear}-${inputMonth}-${inputDate}`;
-      };
-    </script>
+    <script src="./script.js" defer></script>
   </head>
 
   <body>
@@ -53,10 +29,10 @@
         <span>초</span>
       </div>
     </div>
+    <div id="d-day-message"></div>
     <div id="target-selector">
-      <input id="target-year-input" class="target-input" size="5" /> -
-      <input id="target-month-input" class="target-input" size="5" /> -
-      <input id="target-date-input" class="target-input" size="5" />
+      <input id="target-year-input" class="target-input" size="3" /> - <input id="target-month-input" class="target-input" size="3" /> -
+      <input id="target-date-input" class="target-input" size="3" />
     </div>
     <button onclick="counterMaker()" id="start-btn">카운트다운 시작</button>
   </body>
