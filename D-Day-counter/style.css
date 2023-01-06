@@ -13,9 +13,8 @@ h1 {
   font-size: 3rem;
 }
 
-#start-btn {
+.btn {
   font-size: 1.3rem;
-  background-color: lightgrey;
   margin-top: 0.5rem;
 }
 
