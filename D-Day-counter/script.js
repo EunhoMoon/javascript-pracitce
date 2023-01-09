@@ -57,7 +57,7 @@ const starter = (targetDateInput) => {
   }
   container.style.display = "flex";
   messageContainer.style.display = "none";
-  // setClearInterval();
+  setClearInterval();
   counterMaker(targetDateInput);
   const intervalId = setInterval(() => {
     counterMaker(targetDateInput);
